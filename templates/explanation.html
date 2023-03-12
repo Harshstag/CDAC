@@ -1,0 +1,276 @@
+{%block content%}
+<html>
+    <head>
+        {% load static %}
+        <title>Clauses : English : Amrita Online Lab </title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@700&family=Pattaya&display=swap" rel="stylesheet">
+    <!--<script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
+    </script>
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
+    </script>-->
+
+    </head>
+    <style>
+  
+      body{
+      background-image: url("{% static 'images/bgg.png' %}");
+      background-repeat: no-repeat;
+      background-attachment: scroll; 
+      background-size: 100% 100%;
+      }
+    </style>
+    <body>
+        
+            <script type="text/python" src="compoundonly.py">
+           
+            </script>
+       
+            <div class="container" >
+               <!-- <img src="{% static 'images/head.jpg' %}" style="background-position: center;background-size: cover;width: 100%;min-height:30vh;" />-->
+                    <div class="titlesss" style="font-family: 'KoHo', sans-serif;font-size: 48px;font-weight: bold;position: absolute;
+                    top: 24%;left: 49%;transform: translate(-50%, -50%);color: white;font-size: 80px;">Clauses</div>   
+            </div>
+      
+            
+<html>
+<head>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+ 
+  
+  cursor: pointer;
+}
+#container {
+  text-align: center;
+}
+
+.back{
+  border-radius: 50%;
+  background-color: #6db5c4;
+  color: black;
+  margin-left: 80px;
+  margin-top: 1px;
+  
+}
+.button1 {background-color: #B048B5;border-radius: 30px;display: inline-block; } 
+.button2 {background-color: #5c405c;border-radius: 30px;display: inline-block; } 
+.button3 {background-color: #5c405c;border-radius: 30px;margin-top: 5px;text-align: center;}
+.button11 {background-color: #B048B5; text-align: left;} 
+.button22 {background-color: #B048B5; text-align: right;} 
+</style>
+</head>
+<body>
+
+
+<a href='{% url 'main' %}' class="back" >&#8249;</a>
+<div id="container">
+  
+    <button class="button button1" onclick="location.href='{% url 'theory' %}'">Theory </button>
+    <button class="button button2" onclick="location.href='{% url 'ex1' %}'">Lab</button>
+</div>
+</body>
+</html>
+
+
+
+<!--prompt box javascript code-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+             
+             
+<script>
+  
+   function getText(){
+      
+      if(document.getSelection)
+      {
+          var text = document.getSelection().toString();
+          //document.getElementById("review").innerHTML='{{ans1}}';
+          answer1='{{ans1}}';
+          answer2='{{ans2}}';
+          r1='{{res1}}';
+          r2='{{res2}}';
+          c='{{conj}}';
+          n1='{{n1}}';
+          n2='{{n2}}';
+          tense ='{{tense}}';
+          p1='{{p1}}';
+          p2='{{p2}}';
+
+          if(text == answer1.toString()) 
+           {
+               swal({
+               title: 'Correct Answer',
+                
+               text:'Well done,let us move on to next question\n    Hint: There is 1 more independent clause, identify it :)',
+               icon: 'success',
+               button: 'close',
+               
+                   });
+           }
+
+          else if(text == answer2.toString())
+           {
+              swal({
+                  title: 'Correct Answer',
+                  text:'Well done,let us move on to next question\n  Hint: There is 1 more independent clause, identify it :)',
+                  icon: 'success',
+                  button: 'close',
+                   });
+           }
+           
+          else if(text.includes(c) &&  text.includes(r1) && text.includes(r2))
+            {
+                swal({
+               title: 'Wrong Answer',
+               text: 'You have highlighted whole sentence',
+               icon: 'error',
+               button:'Try Again',
+                   });
+            }
+            
+              
+          else if(text.includes(n1) && !text.includes(c))
+              { 
+                  if(text.includes(tense) && !text.includes(p1))
+                { swal({
+                 title: 'Wrong Answer',
+                 text: 'Hint: You have correctly highlighted the subject and tense but soemthing is missing to make it a clause',
+                 icon: 'error',
+                 button:'Try Again',
+                  });
+                }
+                else
+                  { 
+                     swal({
+                    title: 'Wrong Answer',
+                     text: 'Hint: You have highlighted only the subject of the sentence thus few words are missing to make it a clause',
+                    icon: 'error',
+                    button:'Try Again',
+                      });
+                 }
+              }
+               
+          else if(text.includes(n2) && !text.includes(c))
+              { 
+                  if(text.includes(tense) && !text.includes(p2))
+                { swal({
+                 title: 'Wrong Answer',
+                 text: 'Hint: You have correctly highlighted the subject and tense of the sentence but some words are missing to make it a clause',
+                 icon: 'error',
+                 button:'Try Again',
+                  });
+                }
+                 else
+                  { swal({
+                 title: 'Wrong Answer',
+                 text: 'Hint: You have correctly highlighted the subject of the sentence but something is missing to make the highlighted part menaingful',
+                 icon: 'error',
+                 button:'Try Again',
+                  });
+                 }
+              }
+
+          else if(text.includes(tense) && !text.includes(n1) && !text.includes(n2))
+              { swal({
+               title: 'Wrong Answer',
+               text: 'Hint: You have correctly highlighted the tense of the sentence but few words are mising so that the highlighted part makes sense',
+               icon: 'error',
+               button:'Try Again',
+                  });
+                 }
+        else
+         {
+            swal({
+               title: 'Wrong Answer',
+               text: 'Hint: An independent clause is a complete thought with subject, verb and object.',
+               icon: 'error',
+               button:'Please Try Again',
+                  });
+         }
+         }    
+      else
+      {
+       if(document.selection){
+           var text2 =document.selection.createRange();
+           alert(text2);
+       }
+   } 
+}
+  
+</script> 
+ <!--prompt box javascript code ends-->  
+            
+            <!--<p class="c33 c39"><span class="c35 c47">Highligth clause in the given sentence</span></p>-->
+            <br>
+              
+
+
+           
+                <body>
+                    
+                <body>
+                    <p  style="margin: 10px 90px;font-size:20px;color:white"><b><u>BACKGROUND ABOUT CLAUSES</u></b></p>
+                    <p  style="margin: 10px 90px;font-size:20px">A clause is a group of words that contains both a subject and a predicate.<br>
+                        An independent clause is a complete thought. It can stand alone as a sentence. A dependent clause (or subordinate clause) is not a complete thought. It cannot stand alone as a sentence.<br><br>
+                        <i>let's pick up some sandwiches from Pete's Cafe</i><br>
+                        
+                        The clause can stand alone. It is independent.<br><br>
+                        
+                        <i>after Kevin gets off work</i><br>
+                        
+                        The clause cannot stand alone. It is dependent.<br>
+                        
+                        <p  style="margin: 10px 90px;font-size:20px">1. Compound sentence is made up of connecting two independent clauses using coordinationg conjunction,
+                         Coordinating conjunctions are connecting words that are used to connect independent clauses. There are seven coordinating conjunctions: For, And, Nor, But, Or,Yet, So.</p>
+
+                    <p  style="margin: 10px 90px;font-size:20px">The coordinating conjunction is placed before the second independent clause.</p>
+                    <p  style="margin: 10px 90px;font-size:20px"><u>Example:</u>
+                   "She likes to cook carrots but he likes to eat them raw."<br>
+                    She likes to cook carrots and He likes to eat them raw are both independent clauses because they are complete sentences.
+                    They are connected with the coordinating conjunction <i>but</i>.</p>
+                    
+                    <p  style="margin: 10px 90px;font-size:20px">2. A complex sentence is made up of an independent clause and a dependent clause. The dependent clause in a complex sentence usually begins with a subordinating conjunction or relative pronoun. 
+                        Subordinating conjunctions include after, although, as, because, before, if, since, unless, until, when and while. Relative pronouns include that, which, who, whom or whose.</p>
+                    <p  style="margin: 10px 90px;font-size:20px"><u>Example:</u>
+                        "Let's pick up some sandwiches from Pete's Cafe after Kevin gets off work."<br>
+                        
+                        The dependent clause begins with the subordinating conjunction <i>after</i>.<br><br>
+                        
+                        "During his trip to Italy, Tony visited the Trevi Fountain, which is in Rome."<br>
+                        
+                        The dependent clause begins with the relative pronoun <i>which</i>.</p>
+                    <br>
+                    <br>
+                    
+                    <p  style="margin: 10px 90px;font-size:20px;color:white"><b><u>EXPLANATION OF THE GIVEN QUESTION:</u></b></p>
+                    <p  style="margin: 10px 90px;font-size:20px"> '{{ans1}}' is the independent clause. It can stand alone as a sentence.</p>
+                    <p  style="margin: 10px 90px;font-size:20px"> '{{ans2}}' is the independent clause. It can stand alone as a sentence.</p>
+                    <p  style="margin: 10px 90px;font-size:20px"> (Coordinating conjunctions don't count as part of the clause.)</p>
+
+                    
+
+
+                    <a href="{% url 'next' %}" class="button button22" style="float: right;margin-right: 90px;" >Next >></a>
+                    <br><br><br><br><br><br><br><br><br><br><br><br>
+  
+            <!-- Footer -->
+<footer class="page-footer font-small blue" style="background-color:#87a0b4;">
+
+  </footer>
+  <!-- Footer -->
+    
+    
+    </body>
+</html>
+
+{% endblock %}

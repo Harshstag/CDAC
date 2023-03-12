@@ -1,0 +1,15 @@
+fruit
+apple
+mango
+banana
+kiwi
+guava
+watermelon
+tomato
+cucumber
+beet root
+ice-cream
+pizza
+burger
+pasta
+pani-puri

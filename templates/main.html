@@ -1,0 +1,83 @@
+{%block content%}
+<html>
+    <head>
+        {% load static %}
+        <title>Clauses : English : Amrita Online Lab </title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        
+       <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@700&family=Pattaya&display=swap" rel="stylesheet">
+        
+    <!--<script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
+    </script>
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
+    </script>-->
+
+</head>
+<style>
+  
+  body{
+  background-image: url("{% static 'images/bgG.png' %}");
+  background-repeat: no-repeat;
+  background-attachment: scroll; 
+  background-size: 100% 100%;
+  }
+</style>
+
+    <body>
+        
+            <script type="text/python" src="compoundonly.py">
+           
+            </script>
+       
+            <div class="container" >
+                <!--<img src="{% static 'images/head.jpg' %}" style="background-position: center;background-size: cover;width: 100%;min-height:30vh;" />-->
+                    <div class="titlesss" style="font-family: 'KoHo', sans-serif;font-size: 48px;font-weight: bold;position: absolute;
+                    top: 30%;left: 49%;transform: translate(-50%, -50%);color: white;font-size: 80px;">Clauses</div>   
+            </div>
+      
+            
+              <div class="text-1">
+
+                <table id="exercise">
+                    <caption class="caption" >Exercises</caption>
+                    <tr>
+                      <th class="text-2">Exercise Name</th>
+                      <th class="text-2">Description</th>
+                      <th class="text-2">Practice</th>
+                    </tr>
+                    <tr>
+                      <td>Identify Independent Clause</td>
+                      <td>Highlight any independent clause in the given compound sentence</td>
+                      <td><button class="button-11" type="button" ><a href="{% url 'next' %}">Start</a></button></td>
+                    </tr>
+                    <tr>
+                      <td>Identify Dependent Clause</td>
+                      <td>Highlight dependent clause in the given complex sentence</td>
+                      <td><button class="button-11" type="button"><a href="{% url 'next2' %}">Start</a></button></td>
+                    </tr>
+                  </table>
+
+            </div>
+         
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br> 
+            <br>
+            <br> 
+    </body>
+    </html>
+    
+    {% endblock %}

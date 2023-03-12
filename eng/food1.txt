@@ -1,0 +1,10 @@
+pasta
+pizza
+burger
+breakfast
+lunch
+dinner
+snacks
+noodles
+maggi
+fruits

@@ -1,0 +1,9 @@
+eats
+drinks
+likes to eat
+likes to drink
+goes
+likes to go
+play
+played
+wants to play

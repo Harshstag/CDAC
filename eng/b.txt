@@ -1,0 +1,4 @@
+comics
+novels
+magzines
+newspaper

@@ -1,0 +1,7 @@
+park
+party
+restaurant
+garden 
+cafe
+hotel
+friend's house

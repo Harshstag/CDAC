@@ -1,0 +1,12 @@
+bank
+school
+church
+temple
+park
+party
+restaurant
+garden 
+cafe
+hotel
+village
+friend's house

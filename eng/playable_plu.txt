@@ -1,0 +1,5 @@
+chess
+cards
+baseball
+football
+basketball

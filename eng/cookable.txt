@@ -1,0 +1,10 @@
+biryani
+food
+rice
+meal
+pizza
+pasta
+carrots
+vegetables
+potato
+chole bhature
