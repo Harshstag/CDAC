@@ -19,12 +19,13 @@ Open the folder and start the project named "olab"
 5) mkdir olabfront
 6) cd olabfront
 7) django -admin startproject olab
+````````
 8) cd olab
 
 Run the server
 9) python manage.py runserver
    python manage.py startapp eng
-
+````````
 ------------------------------------------------------------------------------------------------------
 
 There are two exercises in this clause simulator.
